@@ -1,3 +1,5 @@
-<?php require "php/header.php";
-require "php/accueil.php";
-require "php/footer.php"?>
+<?php 
+require "php/view/header.php";
+require "php/view/accueil.php";
+require "php/view/footer.php"
+?>

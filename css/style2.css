@@ -26,21 +26,23 @@ nav{
     width: 550px;
     margin : 40px auto;
 }
-a{
+.menu a{
     padding: 10px;
     text-decoration: none;
     color: black;
     border: solid 3px rgba(199, 247, 247, 0.384);
 }
-a:hover{
+.menu a:hover{
     text-decoration: none;
     border: solid 3px rgb(199, 247, 247);
 }
-ul{
+.menu{
     display: flex;
-    list-style: none;
     text-align: center;
     flex-wrap: wrap;
+}
+.menu li{
+    list-style: none;
 }
 .dropdown-content.cache{
     display: none;
@@ -153,5 +155,12 @@ footer{
 footer p{
     font-size: 0.7rem;
     text-align: center;
-    bottom:0;
+}
+footer a{
+    text-decoration: none;
+    text-align: center;
+}
+footer ul{
+        list-style: none;
+        text-align: center;
 }

@@ -1,4 +1,5 @@
-<?php require "php/header.php";
-require "php/section-irlande.php";
-require "php/footer.php" 
+<?php 
+require "php/view/header.php";
+require "php/view/section-irlande.php";
+require "php/view/footer.php" 
 ?>
