@@ -1,0 +1,157 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;   
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1em;
+}
+* {
+    box-sizing: border-box;
+}
+
+/*HEADER*/
+header h1{
+    margin: 0;
+    padding-top: 1rem;
+    height: 95px;
+    background-color: rgba(199, 247, 247, 0.74);
+    font-family: 'Indie Flower', cursive;
+    font-size: 5rem;
+    text-align: center;
+}
+
+/*NAV*/
+nav{
+    width: 550px;
+    margin : 40px auto;
+}
+a{
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    border: solid 3px rgba(199, 247, 247, 0.384);
+}
+a:hover{
+    text-decoration: none;
+    border: solid 3px rgb(199, 247, 247);
+}
+ul{
+    display: flex;
+    list-style: none;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.dropdown-content.cache{
+    display: none;
+}
+.dropdown-content{
+    display: flex;
+    padding-left:0;
+    position: absolute;
+    height: 120px;
+    min-width: 160px;
+    margin-top:12px;
+    padding-top: 12px;
+    flex-wrap: wrap;
+}
+
+main{
+    min-height:70vh;
+}
+
+/*FORMS*/
+form .contact .galerie{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+form > *{
+    padding: 0.25rem;
+    margin: 0.25rem;
+}
+
+/*ACCUEIL*/
+.accueil {
+    display: flex;
+}
+img{
+    width: 300px;
+}
+
+/*GALERIE*/
+.galerie img{ 
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+.galerie{
+    width: 75%;
+    margin: 5rem auto;  
+}
+
+/*LIGHTBOX*/
+.grande-image {
+    position:fixed;
+    background-color: rgba(0,0,0,0.5);
+    width:100%;
+    height:100%;
+    padding:4rem;
+    left:0;
+    top:0;
+    display:block;
+    z-index:-1;
+    opacity:0;
+    transition:all 1s;
+}       
+.grande-image.montrer {
+    display:block;
+    opacity:1;
+    z-index:99;
+    width:100%;
+    height:100%;
+    left:0px;
+    top:0;
+}
+
+/*NEWSLETTER*/
+.newsletter h3, form{
+    width: 100%;
+    text-align: center;
+}
+ button{
+    border: solid 3px rgba(199, 247, 247, 0.651);
+    background-color: white;
+}
+ input, textarea{
+    border: solid 2px rgba(199, 247, 247, 0.651);
+    background-color: white;
+    padding: 5px;
+}
+ button:hover {
+    border: solid 3px rgb(199, 247, 247);
+}
+ label{
+    font-size: smaller;
+    
+}
+::placeholder{
+    color: rgb(214, 199, 250);
+}
+
+/*CONTACT*/
+.contact{
+    width: 70%;
+}
+
+/*FOOTER*/
+footer{
+    margin:0;
+    height: 13vh;
+    background-color: rgba(234, 250, 250, 0.74);
+}
+footer p{
+    font-size: 0.7rem;
+    text-align: center;
+    bottom:0;
+}

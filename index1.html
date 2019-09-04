@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style1.css">
+        <title>Mon site OnePage</title>
+    </head>
+
+<body>
+    <header>
+        <h1>L'Ecosse</h1>
+    </header>
+    <main>
+        <section>
+            <h3>formulaire de newsletter</h3>
+            <form method="GET" action="url-traitement.php">
+                <!-- formulaire newsletter -->
+                <!-- nom et email du visiteur -->
+                <label for="nom">nom</label>
+                <input type="text" placeholder="entrez votre nom" name="nom" required id="nom">
+                <label for="email">email</label>
+                <input type="email" placeholder="entrez votre email" name="email" required id="email">
+                <button type="submit">inscription à la newsletter</button>
+            </form>
+        </section>
+        <section>
+            <h3>galerie</h3>
+            <div class="container">
+                <img src="img/scotland1.jpg" alt="photo1">
+                <img src="img/scotland2.jpg" alt="photo2">
+                <img src="img/scotland3.jpg" alt="photo3">
+                <img src="img/scotland4.jpg" alt="photo4">
+            </div>
+            <div class="grande-image">
+                <img src="img/scotland1.jpg" alt="photo1">
+            </div>
+        </section>
+        <section>
+            <h3>formulaire de contact</h3>
+            <form method="GET" action="url-traitement.php">
+                <!-- formulaire contact -->
+                <!-- nom, email et message du visiteur -->
+                <label for="contact-nom">nom</label>
+                <input type="text" placeholder="entrez votre nom" name="nom" required id="contact-nom">
+                <label for="contact-email">email</label>
+                <input type="email" placeholder="entrez votre email" name="email" required id="contact-email">
+                <label for="contact-message">message</label>
+                <textarea name="contact-message" id="contact-message" placeholder="entrez votre message" cols="80" rows="6" required></textarea>
+                <button type="submit">envoyer le message</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>tous droits réservés - &copy;2019</p>
+    </footer>
+    <script>
+        /* ICI ON ECRIT DU CODE JS */
+        /*
+        QUAND ON CLIQUE SUR UNE PHOTO MINIATURE
+        ON VEUT QUE L'IMAGE EN GRAND CHANGE POUR LA PHOTO CLIQUEE
+        
+        ETAPE1: IL FAUT SELECTIONNER TOUTES LES PHOTOS MINIATURES
+        
+        */
+        /* objet.methode(param1, param2) */
+        var listePhoto = document.querySelectorAll(".container img");
+        listePhoto.forEach((image) => {
+            // pour chaque image
+            image.addEventListener("click", function () {
+                // IL FAUT SELECTIONNER LA PHOTO EN GRAND
+                var photoGrand = document.querySelector(".grande-image img");
+                // CHANGER L'ATTRIBUT src POUR CHANGER L'IMAGE AFFICHEE
+                // this EST UNE VARIABLE QUI CONTIENT LA BALISE SUR LAQUELLE LE VISITEUR A CLIQUE
+                photoGrand.src = this.src;
+                // DEBUG
+                console.log(this);
+            });
+        });
+
+    </script>
+</body>
+
+
+        <script src="main.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+
+</html>
