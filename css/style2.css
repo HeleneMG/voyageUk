@@ -62,12 +62,12 @@ main{
     min-height:70vh;
 }
 
-/*FORMS*/
+/*FORMS
 form .contact .galerie{
     display: flex;
     flex-direction: column;
     width: 30%;
-}
+}*/
 form > *{
     padding: 0.25rem;
     margin: 0.25rem;

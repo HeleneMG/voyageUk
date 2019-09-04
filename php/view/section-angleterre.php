@@ -1,8 +1,8 @@
 <main>
 
-            <section class="galerie">
-                <h3>L'Angleterre</h3>
-                <div class="container">
+    <section class="galerie">
+        <h3>L'Angleterre</h3>
+        <div class="container">
 
 <?php
 $tableauImage = glob("img/england/*.jpg");
@@ -14,9 +14,9 @@ foreach($tableauImage as $image)
 BALISEHTML;
 }
 ?>
-                </div>
-                <div class="grande-image">
-                    <img src="img/england/england1.jpg" alt="L'écosse">
-                </div>
-            </section>
+        </div>
+        <div class="grande-image">
+            <img src="img/england/england1.jpg" alt="L'écosse">
+        </div>
+    </section>
 </main>

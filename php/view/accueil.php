@@ -2,14 +2,15 @@
     <section class="accueil">
         <img src="img/gb.png" alt="">
     </section>
+
     <section class="newsletter">
         <h3>Newsletter</h3>
-        <form action="">
+        <form method="GET" action="api-json.php">
             <label>Nom : 
-                <input type="text" name="nom" placeholder="entrez votre nom" id="nom" required>
+                <input type="text" name="nom" placeholder="Gérard Dupont" id="nom" required>
             </label>
             <label>Email : 
-                <input type="email" name="email" placeholder="entrez votre email" id="email" required>
+                <input type="email" name="email" placeholder="exemple@mail.me" id="email" required>
             </label>
             <button type="submit">Inscrivez-vous à la newsletter</button>
             

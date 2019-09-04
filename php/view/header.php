@@ -7,7 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style2.css">
-        <title>Le Royaume-Uni</title>
+        <title><?php echo $title ?? "titre1 par défaut" ?></title>
     </head>
 
     <body>
