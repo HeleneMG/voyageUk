@@ -13,6 +13,8 @@
             </label>
             <button type="submit">Envoyez votre message</button>
 
+            <div class="confirmation"></div>
+            
             <input type="hidden" name="idFormulaire" value="contact">
         </form>
     </section>

@@ -14,6 +14,8 @@
             </label>
             <button type="submit">Inscrivez-vous à la newsletter</button>
             
+            <div class="confirmation"></div>
+
             <input type="hidden" name="idFormulaire" value="newsletter">
         </form>
     </section>
