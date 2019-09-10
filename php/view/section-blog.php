@@ -1,7 +1,7 @@
 <section>
     <h3>Blog</h3>
     <div class="listeBlog">
-<?php
+        <?php
 // JE VEUX CREER UNE BALISE article POUR CHAQUE ARTICLE
 // IL FAUT QUE JE RECUPERE LA LISTE DES ARTICLES
 // ET POUR CHAQUE ARTICLE, JE CREE UNE BALISE article

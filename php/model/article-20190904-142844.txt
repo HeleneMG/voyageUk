@@ -1,0 +1,4 @@
+
+<h3>Coucou je suis un article</h3>
+<img src="">
+<p>Coucou je suis un contenu d'article</p>

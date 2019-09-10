@@ -2,13 +2,13 @@
 
 // ON VA RECUPERER LE titre ET LE contenu
 // ET ON VA ENREGISTRER CHAQUE ARTICLE DANS SON FICHIER
-// php/model/article-20190904-102034.txt 
+// php/model/article-20190904-102034.txt
 
 $titre    = $_REQUEST["titre"] ?? "";
 $contenu  = $_REQUEST["contenu"] ?? "";
 $photo    = $_REQUEST["photo"] ?? "";
 
-$ligne = 
+$ligne =
 <<<CODETEXT
 
 <h3>$titre</h3>

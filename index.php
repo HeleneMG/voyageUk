@@ -1,4 +1,4 @@
-<?php 
+<?php
 $title = "Accueil";
 
 require "php/view/header.php";

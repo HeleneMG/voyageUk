@@ -3,7 +3,7 @@ $nom    = $_REQUEST["contact-nom"] ?? "";
 $email  = $_REQUEST["contact-email"] ?? "";
 $message = $_REQUEST["contact-message"] ?? "";
 
-$ligne = 
+$ligne =
 <<<CODETEXT
 -------------
 Nom: $nom
@@ -25,4 +25,3 @@ file_put_contents($nomFichier, $ligne, FILE_APPEND);
 
 // message à afficher au visiteur
 $confirmation = "merci $nom pour votre message.";
-
