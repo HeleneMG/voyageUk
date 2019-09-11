@@ -1,27 +1,41 @@
 <?php
-$nom    = $_REQUEST["contact-nom"] ?? "";
-$email  = $_REQUEST["contact-email"] ?? "";
-$message = $_REQUEST["contact-message"] ?? "";
-
-$ligne =
+        // IL FAUT TRAITER LE FORMULAIRE contact
+        // RECUPERER LES INFOS
+        $nom = $_REQUEST["nom"] ?? "";
+        $email = $_REQUEST["email"] ?? "";
+        $message = $_REQUEST["message"] ?? "";
+        // UNE FOIS QU'ON A CETTE FONCTION A NOTRE DISPOSITION
+        // POUR L'UTILISER, ON VA APPELER LA FONCTION
+        insererLigneTable("contact", [
+                "nom" => $nom, 
+                "email" => $email, 
+                "message" => $message 
+                ]);
+        /*
+        insererLigneContact([
+            "nom" => $nom, 
+            "email" => $email, 
+            "message" => $message 
+            ]);
+        */
+        // ENVOYER UN MAIL
+        // envoyer un email
+        $ligne = 
 <<<CODETEXT
 -------------
 Nom: $nom
 Email: $email
 Message:
 $message
-
 CODETEXT;
-
-// JE VAIS CREER UN FICHIER DIFFERENT POUR CHAQUE MESSAGE
-// php/model/contact-20190904-100823.txt
-// https://www.php.net/manual/fr/function.date.php
-$date = date("Ymd-His");
-$nomFichier = "php/model/contact-$date.txt";
-file_put_contents($nomFichier, $ligne, FILE_APPEND);
-
-// envoyer un email
-@mail("webmaster@monsite.fr", "nouveau message contact", $ligne);
-
-// message à afficher au visiteur
-$confirmation = "merci $nom pour votre message.";
+        @mail("webmaster@monsite.fr", "nouveau message contact", $ligne);
+    
+        // STOCKER LES INFOS 
+        // => DANS LA TABLE SQL contact
+        // JE VAIS CONSTRUIRE UNE FONCTION QUI VA ME SERVIR A INSERER UNE LIGNE DANS UNE TABLE
+        // insererLigne("contact", [ "nom" => $nom, "email" => $email, "message" => $message ]);
+        // insererLigneContact([ "nom" => $nom, "email" => $email, "message" => $message ]);
+        // PROGRAMMATION
+        // ON VEUT CREER UNE FONCTION insererLigneContact 
+        // QUI VA INSERER UNE LIGNE DANS LA TABLE SQL contact
+        // CETTE FONCTION PREND EN PARAMETRE $tabAssoTokenValeur UN TABLEAU ASSOCIATIF

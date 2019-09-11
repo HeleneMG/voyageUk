@@ -2,7 +2,7 @@ body{
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;   
+    height: 100%;
     font-family: 'Roboto', sans-serif;
     font-size: 1.1em;
 }
@@ -12,17 +12,18 @@ body{
 
 /*HEADER*/
 header{
-    height:26vh;
+    height: 246px;
     background-color: rgba(199, 247, 247, 0.74);
 }
 header h1{
     margin: 0;
-    height: 120px;
-    font-family: 'Indie Flower', cursive;
+    height: 221px;
+    font-family: 'Fredericka the Great', cursive;
     font-size: 5rem;
     text-align: center;
 }
-.container{
+.container-header{
+    height: 246px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -35,7 +36,7 @@ header h1{
 .menu{
     width: 140px;
     padding:0;
-    text-align: center; 
+    text-align: center;
 }
 .menu li{
     list-style: none;
@@ -59,48 +60,108 @@ header h1{
     padding-left:0;
     position: absolute;
     font-size: smaller;
-    
 }
 .dropdown-content li{
     margin-top: 0;
     width: 130px;
 }
+/*FIN HEADER*/
 
-
-main{
+#accueil{
     min-height:70vh;
+    background-image: url(assets/img/uk.jpg);
+    background-position: center;
+    background-size: cover;
 }
 
-/*FORMS
-form .contact .galerie{
-    display: flex;
-    flex-direction: column;
-    width: 30%;
+/*ACCUEIL
+.accueil img{
+    width: 300px;
+    margin-left:auto;
+    margin-right:auto;
 }*/
+
 form > *{
     padding: 0.25rem;
     margin: 0.25rem;
 }
 
-/*ACCUEIL*/
-.accueil {
-    display: flex;
+/*NEWSLETTER*/
+.newsletter{
+    background-color: rgba(241, 240, 240, 0.295);
+
 }
-img{
-    width: 300px;
-    margin-left:auto;
-    margin-right:auto;
+.newsletter h3, form{
+    width: 100%;
+    text-align: center;
+}
+ input, textarea{
+    border: solid 2px rgba(156, 231, 231, 0.877);
+    background-color: white;
+    padding: 5px;
+    min-width: 222px;
+}
+ button{
+    border: solid 4px rgba(199, 247, 247, 0.651);
+    background-color: white;
+    min-width: 187px;
+}
+ button:hover {
+    border: solid 4px rgb(156, 231, 231);
+    cursor: pointer;
+}
+ label{
+    font-size: smaller;
+}
+::placeholder{
+    color: rgb(214, 199, 250);
+}
+
+/*FORMULAIRE CONTACT*/
+.contact, .blog{
+  width: 50%;
+  margin: 40px auto;
+  padding: 20px 20px 30px 20px;
+  background-color: rgba(241, 240, 240, 0.295);
+}
+.contact h3, .blog h3{
+  text-align: center;
+}
+.contact form, .blog form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact form button, .blog form button{
+  height: 40px;
+  width: 100%;
+  margin-top: 10px;
+}
+.contact form input, .blog form input{
+  height: 40px;
+  width: 99%;
+  min-width: 200px;
+  margin: 10px 0;
+  font-family: sans-serif;
+}
+.contact form label ::placeholder, .blog form label ::placeholder{
+  color: rgb(206, 202, 202);
+}
+.contact textarea, .blog textarea{
+    width: 100%;
+    margin: 10px 0;
+    font-family: sans-serif;
 }
 
 /*GALERIE*/
-.galerie img{ 
+.galerie img{
     width: 250px;
     height: 250px;
     object-fit: cover;
 }
 .galerie{
     width: 75%;
-    margin: 5rem auto;  
+    margin: 5rem auto;
 }
 
 /*LIGHTBOX*/
@@ -116,7 +177,7 @@ img{
     z-index:-1;
     opacity:0;
     transition:all 1s;
-}       
+}
 .grande-image.montrer {
     display:block;
     opacity:1;
@@ -126,40 +187,22 @@ img{
     left:0px;
     top:0;
 }
-
-/*NEWSLETTER*/
-.newsletter h3, form{
-    width: 100%;
-    text-align: center;
+/*MENTIONS LEGALES*/
+.mentions-legales{
+    width: 60%;
+    margin: 50px auto 50px auto;
+    text-align: justify;
 }
- button{
-    border: solid 3px rgba(199, 247, 247, 0.651);
-    background-color: white;
-}
- input, textarea{
-    border: solid 2px rgba(199, 247, 247, 0.651);
-    background-color: white;
-    padding: 5px;
-}
- button:hover {
-    border: solid 3px rgb(199, 247, 247);
-}
- label{
-    font-size: smaller;   
-}
-::placeholder{
-    color: rgb(214, 199, 250);
-}
-
-/*CONTACT*/
-.contact{
-    width: 70%;
+.mentions-legales h3{
+    margin-bottom: 35px;
+    text-align: center; 
 }
 
 /*FOOTER*/
 footer{
+    padding-top: 15px;
     margin:0;
-    height: 13vh;
+    height: 14vh;
     background-color: rgba(234, 250, 250, 0.74);
 }
 .petit{
@@ -171,9 +214,10 @@ footer a{
     text-align: center;
 }
 footer ul{
-        padding-left: 0;
-        list-style: none;
-        text-align: center;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    text-align: center;
 }
 
 /*****MEDIA QUERIES*****/
@@ -183,15 +227,15 @@ footer ul{
         height: 83vh;
     }
     header h1{
-        min-height: 363px;    
-    }       
+        min-height: 363px;
+    }
 }
 @media screen and (min-width: 437px) and (max-width: 531px){
     header{
         height: 58vh;
     }
     header h1{
-        min-height: 235px;    
+        min-height: 235px;
     }
 }
 @media screen and (min-width: 531px) and (max-width: 811px){
@@ -199,14 +243,14 @@ footer ul{
         height: 49vh;
     }
     header h1{
-        min-height: 235px;    
+        min-height: 235px;
     }
 }
 @media screen and (max-width: 678px){
     .newsletter form{
         flex-direction: column;
         display: flex;
-        width: 100%;    
+        width: 100%;
     }
     .newsletter button{
         width: 202px;

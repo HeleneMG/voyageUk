@@ -1,34 +1,35 @@
-<section>
-    <h3>Blog</h3>
-    <div class="listeBlog">
-        <?php
-// JE VEUX CREER UNE BALISE article POUR CHAQUE ARTICLE
-// IL FAUT QUE JE RECUPERE LA LISTE DES ARTICLES
-// ET POUR CHAQUE ARTICLE, JE CREE UNE BALISE article
-// https://www.php.net/manual/fr/function.glob.php
-$tabFichierArticle = glob("php/model/article-*.txt");
+        <section>
+            <h3>Les Derniers Articles du Blog</h3>
+            <div class="listeArticle">
+                <?php
+// ON VEUT RECUPERER LA LISTE DES ARTICLE DE LA TABLE SQL blog
+// ET ON LES AFFICHERA DANS DES BALISES HTML article
+// (READ)
+    require "php/mes-fonctions.php";
 
-// ON INVERSE L'ORDRE DES ELEMENTS
-// POUR AVOIR EN PREMIER LE PLUS RECENT
-// https://www.php.net/manual/fr/function.array-reverse.php
-$tabFichierArticle = array_reverse($tabFichierArticle);
-
-// PARCOURIR LE TABLEAU
-foreach($tabFichierArticle as $fichier)
-{
-    // LIRE LE CONTENU DU FICHIER
-    // https://www.php.net/manual/fr/function.file-get-contents.php
-    $contenuFichier = file_get_contents($fichier);
-    echo
+    // LA FONCTION QUE JE VEUX AVOIR
+    $tabLigne = lireTableBlog();
+    // JE PARCOURS TOUS LES ELEMENTS DU TABLEAU
+    foreach($tabLigne as $ligneAsso)
+    {
+        $titre      = $ligneAsso["titre"];
+        $contenu    = $ligneAsso["contenu"];
+        $photo      = $ligneAsso["photo"];
+        // JE PEUX CONSTRUIRE LE CODE HTML POUR L'ARTICLE
+        echo
 <<<CODEHTML
-<article>
-$contenuFichier
-</article>
+        <article>
+            <h3>$titre</h3>
+            <img src="$photo" alt="$photo">
+            <p>$contenu</p>
+        </article>
 CODEHTML;
-
-
-}
+    }
+    // DEBUG
+    // print_r UN PEU COMME console.log
+    // echo "<pre>";
+    // print_r($tabLigne);
+    // echo "</pre>";
 ?>
-    </div>
-
-</section>
+            </div>
+        </section>

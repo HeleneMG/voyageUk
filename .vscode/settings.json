@@ -1,30 +1,15 @@
 {
-    "peacock.affectAccentBorders": true,
-    "peacock.affectTabActiveBorder": true,
     "workbench.colorCustomizations": {
-        "titleBar.activeBackground": "#a360c9",
-        "titleBar.inactiveBackground": "#a360c999",
-        "titleBar.activeForeground": "#15202b",
-        "titleBar.inactiveForeground": "#15202b99",
-        "statusBar.background": "#a360c9",
-        "statusBarItem.hoverBackground": "#8c3eb8",
-        "statusBar.foreground": "#15202b",
-        "panel.border": "#b986d6",
-        "sideBar.border": "#b986d6",
-        "editorGroup.border": "#b986d6",
-        "tab.activeBorder": "#b986d6"
+        "activityBar.background": "#1799fd",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#be026c",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "titleBar.activeBackground": "#027fdf",
+        "titleBar.inactiveBackground": "#027fdf99",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveForeground": "#e7e7e799",
+        "tab.activeBorder": "#1799fd"
     },
-    "peacock.color": "#a360c9",
-    "sqltools.connections": [
-        {
-            "askForPassword": true,
-            "connectionTimeout": 30,
-            "database": "blog-sql",
-            "dialect": "MySQL",
-            "name": "gb",
-            "port": 3306,
-            "server": "127.0.0.1",
-            "username": "root"
-        }
-    ]
+    "peacock.color": "#027fdf"
 }
