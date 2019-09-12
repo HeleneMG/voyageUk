@@ -13,14 +13,7 @@ body{
 /*HEADER*/
 header{
     height: 246px;
-    background-color: rgba(199, 247, 247, 0.74);
-}
-header h1{
-    margin: 0;
-    height: 221px;
-    font-family: 'Fredericka the Great', cursive;
-    font-size: 5rem;
-    text-align: center;
+    background: linear-gradient(rgba(199, 247, 247, 0.884) 70%, white);
 }
 .container-header{
     height: 246px;
@@ -28,6 +21,19 @@ header h1{
     justify-content: space-evenly;
     align-items: center;
 }
+/*header h1{
+    margin: 0;
+    height: 221px;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 5rem;
+    text-align: center;
+}
+header img{
+    width: 500px;
+    height:200px;
+    object-fit: cover;
+}*/
+
 /*NAV*/
 .menu a, .menu a:hover, .menu a:focus, .menu a:visited{
     text-decoration: none;
@@ -49,37 +55,30 @@ header h1{
 .menu li:hover{
     border: solid 3px rgb(199, 247, 247);
 }
-.dropdown-content.cache{
-    display: none;
-}
-.dropdown-content{
-    display: flex;
-    flex-wrap: wrap;
-    width: 260px;
-    margin-top: 13px;
-    padding-left:0;
-    position: absolute;
-    font-size: smaller;
-}
-.dropdown-content li{
-    margin-top: 0;
-    width: 130px;
-}
 /*FIN HEADER*/
 
-#accueil{
-    min-height:70vh;
-    background-image: url(assets/img/uk.jpg);
+.background{
+    min-height:80vh;
+    background-image: url(../img/uk2.jpg);
     background-position: center;
     background-size: cover;
 }
+.gradient{
+    min-height:80vh;
+    background-image:
+    linear-gradient(to top, rgba(255, 255, 255, 0) 70%, rgb(255, 255, 255)),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0) 81%, rgb(255, 255, 255));
+}
 
-/*ACCUEIL
-.accueil img{
-    width: 300px;
-    margin-left:auto;
-    margin-right:auto;
-}*/
+/*ACCUEIL*/
+.titreApp{
+    font-size: 85px;
+    margin: 0px auto;
+    padding: 192px 50px;
+    height: 488px;
+    color: white;
+    max-width: 971px;
+}
 
 form > *{
     padding: 0.25rem;
@@ -87,13 +86,11 @@ form > *{
 }
 
 /*NEWSLETTER*/
-.newsletter{
-    background-color: rgba(241, 240, 240, 0.295);
 
-}
 .newsletter h3, form{
     width: 100%;
     text-align: center;
+    padding-top: 10px;
 }
  input, textarea{
     border: solid 2px rgba(156, 231, 231, 0.877);
@@ -119,10 +116,11 @@ form > *{
 
 /*FORMULAIRE CONTACT*/
 .contact, .blog{
-  width: 50%;
-  margin: 40px auto;
-  padding: 20px 20px 30px 20px;
-  background-color: rgba(241, 240, 240, 0.295);
+    width: 40%;
+    height: 98vh;
+    margin: 0px auto;
+    padding: 40px 20px 30px 20px;
+    color: white;
 }
 .contact h3, .blog h3{
   text-align: center;
@@ -154,29 +152,36 @@ form > *{
 }
 
 /*GALERIE*/
+.galerie .container{
+    width: 100%;
+}
 .galerie img{
     width: 250px;
     height: 250px;
     object-fit: cover;
+    cursor: pointer;
 }
 .galerie{
-    width: 75%;
+    width: 65%;
     margin: 5rem auto;
 }
-
 /*LIGHTBOX*/
-.grande-image {
+.grande-image{
     position:fixed;
     background-color: rgba(0,0,0,0.5);
-    width:100%;
-    height:100%;
+    width:500px;
+    height:500px;
     padding:4rem;
-    left:0;
+    left:0px;
     top:0;
     display:block;
     z-index:-1;
     opacity:0;
     transition:all 1s;
+}
+.grande-image img{
+    width : 100%;
+    height: 100%;
 }
 .grande-image.montrer {
     display:block;
@@ -184,8 +189,16 @@ form > *{
     z-index:99;
     width:100%;
     height:100%;
-    left:0px;
-    top:0;
+}
+
+/*ARTCILES BLOG*/
+.article{
+    width: 70%;
+}
+.article img{
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
 }
 /*MENTIONS LEGALES*/
 .mentions-legales{
@@ -195,7 +208,7 @@ form > *{
 }
 .mentions-legales h3{
     margin-bottom: 35px;
-    text-align: center; 
+    text-align: center;
 }
 
 /*FOOTER*/
@@ -203,7 +216,7 @@ footer{
     padding-top: 15px;
     margin:0;
     height: 14vh;
-    background-color: rgba(234, 250, 250, 0.74);
+    background: linear-gradient(white,rgba(199, 247, 247, 0.884)80%);
 }
 .petit{
     font-size: 0.7rem;

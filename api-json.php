@@ -16,4 +16,18 @@ if ($idFormulaire != "")
     {
         require "php/controller/traitement-blog.php";
     }
+    if($idFormulaire == "newsletter")
+    {
+        require "php/controller/traitement-newsletter.php";
+    }
 }
+
+$tabAssoJson = [
+    "cle1"   => "valeur1",
+    "cle2"   => "valeur12",
+    "confirmation" => $confirmation ?? "",
+    "tabArticle" => $tabLigne ?? [],
+];
+$texteJson = json_encode($tabAssoJson, JSON_PRETTY_PRINT);
+// afficher le texte json
+echo $texteJson;

@@ -1,8 +1,6 @@
 
 <?php
-// JE VAIS RANGER LES FONCTIONS QUE JE CREE
-// CONSEIL: UTILISER UN VERBE DANS LE NOM DES FONCTIONS
-// (UNE FONCTION PERMET DE REALISER UNE ACTION => VERBE)
+
 function creerConnexionBDD()
 {
     // Data Source Name
@@ -13,6 +11,7 @@ function creerConnexionBDD()
     $dbh = new PDO($dsn, $user, $password);
     return $dbh;
 }
+
 // JE CREE UNE FONCTION POUR ENVOYER UNE REQUETE SQL
 function envoyerRequeteSQL ($requeteSQLPreparee, $tabAssoColonneValeur)
 {
@@ -27,6 +26,7 @@ function envoyerRequeteSQL ($requeteSQLPreparee, $tabAssoColonneValeur)
     // RENVOYER $pdoStatement POUR LA LECTURE
     return $pdoStatement;
 }
+
 // CETTE FONCTION DOIT RENVOYER UN TABLEAU $tabLigne
 function lireTableBlog()
 {
@@ -42,6 +42,7 @@ CODESQL;
     $tabLigne = $pdoStatement->fetchAll(PDO::FETCH_ASSOC);
     return $tabLigne;
 }
+
 // EN PHP: VERSION AVEC UN TABLEAU ASSOCIATIF
 function concatenerTexteAsso ($nomTable, $tabAssoColonneValeur)
 {
@@ -78,44 +79,3 @@ function insererLigneTable($nomTable, $tabAssoColonneValeur)
     // ETAPE2: ENVOYER LA REQUETE
     $pdoStatement = envoyerRequeteSQL($requeteSQLPreparee, $tabAssoColonneValeur);
 }
-/*
-function insererLigneBlog ($tabAssoColonneValeur)
-{
-    // ETAPE1: CREER UNE REQUETE SQL PREPAREE
-    $requeteSQLPreparee =
-<<<CODESQL
-INSERT INTO blog
-(titre, contenu, photo)
-VALUES
-( :titre, :contenu, :photo )
-CODESQL;
-    // ETAPE2: ENVOYER LA REQUETE
-    $pdoStatement = envoyerRequeteSQL($requeteSQLPreparee, $tabAssoColonneValeur);
-}
-// DEFINIR/DECLARER LA FONCTION
-function insererLigneContact ($tabAssoColonneValeur)
-{
-    // ETAPE1: CREER UNE REQUETE SQL PREPAREE
-    $requeteSQLPreparee =
-<<<CODESQL
-INSERT INTO contact
-(nom, email, message)
-VALUES
-( :nom, :email, :message )
-CODESQL;
-    // ETAPE2: ENVOYER LA REQUETE
-    $pdoStatement = envoyerRequeteSQL($requeteSQLPreparee, $tabAssoColonneValeur);
-}
-*/
-        /*
-        $requeteSQL =
-<<<CODESQL
-INSERT INTO contact
-(nom, email, message)
-VALUES
-( '$nom', '$email', '$message' )
-CODESQL;
-        // MANIERE RAPIDE MAIS PAS SECURISEE CONTRE LES INJECTIONS SQL...
-        // https://www.php.net/manual/fr/pdo.exec.php
-        // $dbh->exec($requeteSQL);
-        */

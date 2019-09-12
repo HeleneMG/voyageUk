@@ -1,12 +1,22 @@
 <?php
-$nom    = $_REQUEST["nom"] ?? "";
-$email  = $_REQUEST["email"] ?? "";
+        // IL FAUT TRAITER LE FORMULAIRE contact
+        // RECUPERER LES INFOS
+        $nom = $_REQUEST["nom"] ?? "";
+        $email = $_REQUEST["email"] ?? "";
+        // UNE FOIS QU'ON A CETTE FONCTION A NOTRE DISPOSITION
+        // POUR L'UTILISER, ON VA APPELER LA FONCTION
+        insererLigneTable("newsletter", [
+                "nom" => $nom,
+                "email" => $email
+            ]);
 
-$ligne = "$nom,$email\n";
-file_put_contents("php/model/newsletter.csv", $ligne, FILE_APPEND);
+        $ligne =
+<<<CODETEXT
+-------------
+Nom: $nom
+Email: $email
 
-// envoyer un email
-@mail("webmaster@monsite.fr", "nouvelle inscription newsletter", $ligne);
+CODETEXT;
 
-// message à afficher au visiteur
-$confirmation = "Merci $nom, votre inscription a bien été enregistrée";
+@mail("webmaster@monsite.fr", "nouvel abonnement newsletter", $ligne);
+$confirmation = "Merci $nom, votre abonnement a bien été pris en compte";

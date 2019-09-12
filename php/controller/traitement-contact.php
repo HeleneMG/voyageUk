@@ -7,20 +7,12 @@
         // UNE FOIS QU'ON A CETTE FONCTION A NOTRE DISPOSITION
         // POUR L'UTILISER, ON VA APPELER LA FONCTION
         insererLigneTable("contact", [
-                "nom" => $nom, 
-                "email" => $email, 
-                "message" => $message 
+                "nom" => $nom,
+                "email" => $email,
+                "message" => $message
                 ]);
-        /*
-        insererLigneContact([
-            "nom" => $nom, 
-            "email" => $email, 
-            "message" => $message 
-            ]);
-        */
-        // ENVOYER UN MAIL
-        // envoyer un email
-        $ligne = 
+
+        $ligne =
 <<<CODETEXT
 -------------
 Nom: $nom
@@ -28,14 +20,16 @@ Email: $email
 Message:
 $message
 CODETEXT;
-        @mail("webmaster@monsite.fr", "nouveau message contact", $ligne);
-    
-        // STOCKER LES INFOS 
+
+@mail("webmaster@monsite.fr", "nouveau message contact", $ligne);
+$confirmation = "Merci de votre message $nom";
+
+        // STOCKER LES INFOS
         // => DANS LA TABLE SQL contact
         // JE VAIS CONSTRUIRE UNE FONCTION QUI VA ME SERVIR A INSERER UNE LIGNE DANS UNE TABLE
         // insererLigne("contact", [ "nom" => $nom, "email" => $email, "message" => $message ]);
         // insererLigneContact([ "nom" => $nom, "email" => $email, "message" => $message ]);
         // PROGRAMMATION
-        // ON VEUT CREER UNE FONCTION insererLigneContact 
+        // ON VEUT CREER UNE FONCTION insererLigneContact
         // QUI VA INSERER UNE LIGNE DANS LA TABLE SQL contact
         // CETTE FONCTION PREND EN PARAMETRE $tabAssoTokenValeur UN TABLEAU ASSOCIATIF

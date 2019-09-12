@@ -10,6 +10,11 @@ insererLigneTable("blog", [
     "contenu"   => $contenu,
     "photo"     => $photo,
 ]);
+
+$confirmation = "Article publié ($titre)";
+$tabLigne = lireTableBlog();
+
+
 /*
 insererLigneBlog([
     "titre"     => $titre,

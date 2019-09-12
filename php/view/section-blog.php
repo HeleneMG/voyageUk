@@ -1,7 +1,7 @@
-        <section>
-            <h3>Les Derniers Articles du Blog</h3>
-            <div class="listeArticle">
-                <?php
+<section class="articles">
+    <h3>Les Derniers Articles</h3>
+    <div class="listeArticle">
+        <?php
 // ON VEUT RECUPERER LA LISTE DES ARTICLE DE LA TABLE SQL blog
 // ET ON LES AFFICHERA DANS DES BALISES HTML article
 // (READ)
@@ -31,5 +31,5 @@ CODEHTML;
     // print_r($tabLigne);
     // echo "</pre>";
 ?>
-            </div>
-        </section>
+    </div>
+</section>

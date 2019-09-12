@@ -19,17 +19,11 @@
                 <nav>
                     <ul class="menu">
                         <li><a href="index.php">Accueil</a></li>
-                        <li class="dropdown"><a href="#">Galerie</a>
-                            <ul class="dropdown-content cache">
-                                <li><a href="angleterre.php">Angleterre</a></li>
-                                <li><a href="ecosse.php">Ecosse</a></li>
-                                <li><a href="irlande.php">Irlande du Nord</a></li>
-                                <li><a href="galles.php">Pays de Galles</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="galerie.php">Galerie</a></li>
                     </ul>
                 </nav>
-                <h1>Le</br>Royaume-Uni</h1>
+                <!--<h1>Le</br>Royaume-Uni</h1>
+                <img src="assets/img/unionJack.jpg" alt="Union Jack">-->
                 <nav>
                     <ul class="menu">
                         <li><a href="blog.php">Blog</a></li>

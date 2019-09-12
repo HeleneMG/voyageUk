@@ -1,16 +1,19 @@
 <div id="accueil">
-    <section class="accueil">
-        <!--<img src="assets/img/gb.png" alt="">-->
+    <section class="background">
+        <div class="gradient">
+            <h2 class="titreApp">Visitez<span id="titreApp"></span></h2>
+        </div>
     </section>
+
     <section class="newsletter">
         <h3>Newsletter</h3>
-        <form method="GET" action="api-json.php">
+        <form class="ajax" method="GET" action="api-json.php">
             <label>Nom :
-                <input type="text" name="nom" placeholder="Stéphanie de Monaco" id="nom" required>
+                <input type="text" name="nom" placeholder="Stéphanie de Monaco" required>
             </label>
 
             <label>Email :
-                <input type="email" name="email" placeholder="stefofmonaco@mail.me" id="email" required>
+                <input type="email" name="email" placeholder="stef2monac@mail.me" required>
             </label>
             <button type="submit">Inscription à la newsletter</button>
 
@@ -18,5 +21,9 @@
 
             <input type="hidden" name="idFormulaire" value="newsletter">
         </form>
+    </section>
+
+    <section>
+        <div class="listeBlog"></div>
     </section>
 </div>
