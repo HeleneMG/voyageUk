@@ -1,18 +1,16 @@
 <div id="accueil">
     <section class="background">
-        <div class="gradient">
-            <h2 class="titreApp">Visitez<span id="titreApp"></span></h2>
-        </div>
+            <h2 class="titreApp">Visitez</br><span id="titreApp"></span></h2>
     </section>
 
     <section class="newsletter">
         <h3>Newsletter</h3>
         <form class="ajax" method="GET" action="api-json.php">
-            <label>Nom :
+            <label>Nom
                 <input type="text" name="nom" placeholder="Stéphanie de Monaco" required>
             </label>
 
-            <label>Email :
+            <label>Email
                 <input type="email" name="email" placeholder="stef2monac@mail.me" required>
             </label>
             <button type="submit">Inscription à la newsletter</button>

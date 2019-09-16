@@ -12,27 +12,18 @@ body{
 
 /*HEADER*/
 header{
-    height: 246px;
-    background: linear-gradient(rgba(199, 247, 247, 0.884) 70%, white);
+    height: 100px;
+    background: rgba(122, 202, 202, 0.774);
+    /*linear-gradient(rgba(199, 247, 247, 0.884) 70%, white);*/
 }
-.container-header{
-    height: 246px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-/*header h1{
+
+header h1{
     margin: 0;
-    height: 221px;
-    font-family: 'Fredericka the Great', cursive;
-    font-size: 5rem;
+    padding-top: 10px;
+    font-size: 2.5rem;
     text-align: center;
+    color: white;
 }
-header img{
-    width: 500px;
-    height:200px;
-    object-fit: cover;
-}*/
 
 /*NAV*/
 .menu a, .menu a:hover, .menu a:focus, .menu a:visited{
@@ -40,11 +31,16 @@ header img{
     color: black;
 }
 .menu{
-    width: 140px;
-    padding:0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0px 50px;
+    margin: 0;
     text-align: center;
 }
 .menu li{
+    width:calc(100% / 4);
     list-style: none;
     margin-top: 19px;
     padding: 10px;
@@ -53,7 +49,7 @@ header img{
     border: solid 3px rgba(199, 247, 247, 0.384);
 }
 .menu li:hover{
-    border: solid 3px rgb(199, 247, 247);
+    border: solid 3px rgba(199, 247, 247, 0.884);
 }
 /*FIN HEADER*/
 
@@ -63,21 +59,21 @@ header img{
     background-position: center;
     background-size: cover;
 }
-.gradient{
+/*.gradient{
     min-height:80vh;
     background-image:
     linear-gradient(to top, rgba(255, 255, 255, 0) 70%, rgb(255, 255, 255)),
     linear-gradient(to bottom, rgba(255, 255, 255, 0) 81%, rgb(255, 255, 255));
-}
+}*/
 
 /*ACCUEIL*/
 .titreApp{
     font-size: 85px;
     margin: 0px auto;
-    padding: 192px 50px;
-    height: 488px;
+    padding: 163px 50px;
+    height: 80vh;
     color: white;
-    max-width: 971px;
+    max-width: 777px;
 }
 
 form > *{
@@ -90,7 +86,6 @@ form > *{
 .newsletter h3, form{
     width: 100%;
     text-align: center;
-    padding-top: 10px;
 }
  input, textarea{
     border: solid 2px rgba(156, 231, 231, 0.877);
@@ -191,7 +186,7 @@ form > *{
     height:100%;
 }
 
-/*ARTCILES BLOG*/
+/*ARTICLES BLOG*/
 .article{
     width: 70%;
 }
@@ -212,11 +207,13 @@ form > *{
 }
 
 /*FOOTER*/
+
 footer{
     padding-top: 15px;
     margin:0;
     height: 14vh;
-    background: linear-gradient(white,rgba(199, 247, 247, 0.884)80%);
+    background: rgb(122, 202, 202);
+/*linear-gradient(white,rgba(199, 247, 247, 0.884)80%);*/
 }
 .petit{
     font-size: 0.7rem;
@@ -225,40 +222,20 @@ footer{
 footer a{
     text-decoration: none;
     text-align: center;
+    color: white;
+
 }
 footer ul{
     margin: 0;
     padding-left: 0;
+    color: white;
     list-style: none;
     text-align: center;
 }
 
 /*****MEDIA QUERIES*****/
 
-@media screen and (max-width: 437px) {
-    header{
-        height: 83vh;
-    }
-    header h1{
-        min-height: 363px;
-    }
-}
-@media screen and (min-width: 437px) and (max-width: 531px){
-    header{
-        height: 58vh;
-    }
-    header h1{
-        min-height: 235px;
-    }
-}
-@media screen and (min-width: 531px) and (max-width: 811px){
-    header{
-        height: 49vh;
-    }
-    header h1{
-        min-height: 235px;
-    }
-}
+
 @media screen and (max-width: 678px){
     .newsletter form{
         flex-direction: column;

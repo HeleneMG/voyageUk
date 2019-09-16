@@ -12,13 +12,21 @@ if ($idFormulaire != "")
     {
         require "php/controller/traitement-contact.php";
     }
-    if ($idFormulaire == "blog")
-    {
-        require "php/controller/traitement-blog.php";
-    }
     if($idFormulaire == "newsletter")
     {
         require "php/controller/traitement-newsletter.php";
+    }
+    if ($idFormulaire == "blog-create")
+    {
+        require "php/controller/traitement-blog-create.php";
+    }
+    if ($idFormulaire == "blog-delete")
+    {
+        require "php/controller/traitement-blog-delete.php";
+    }
+    if ($idFormulaire == "blog-update")
+    {
+        require "php/controller/traitement-blog-update.php";
     }
 }
 

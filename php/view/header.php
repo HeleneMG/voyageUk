@@ -15,20 +15,13 @@
 
     <body>
         <header>
-            <div class="container-header">
+            <h1>Travelling UK</h1>
                 <nav>
                     <ul class="menu">
                         <li><a href="index.php">Accueil</a></li>
                         <li><a href="galerie.php">Galerie</a></li>
-                    </ul>
-                </nav>
-                <!--<h1>Le</br>Royaume-Uni</h1>
-                <img src="assets/img/unionJack.jpg" alt="Union Jack">-->
-                <nav>
-                    <ul class="menu">
                         <li><a href="blog.php">Blog</a></li>
                         <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </nav>
-            </div>
         </header>

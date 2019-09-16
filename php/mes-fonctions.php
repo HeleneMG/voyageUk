@@ -1,6 +1,4 @@
-
 <?php
-
 function creerConnexionBDD()
 {
     // Data Source Name
@@ -35,10 +33,8 @@ function lireTableBlog()
 SELECT * FROM blog
 ORDER BY id DESC
 CODESQL;
+
     $pdoStatement = envoyerRequeteSQL($requeteSQLPreparee, []);
-    // https://www.php.net/manual/fr/class.pdostatement.php
-    // $pdoStatement VA NOUS SERVIR A RECUPERER LES RESULTATS
-    // https://www.php.net/manual/fr/pdostatement.fetchall.php
     $tabLigne = $pdoStatement->fetchAll(PDO::FETCH_ASSOC);
     return $tabLigne;
 }
@@ -78,4 +74,62 @@ function insererLigneTable($nomTable, $tabAssoColonneValeur)
     $requeteSQLPreparee = concatenerTexteAsso($nomTable, $tabAssoColonneValeur);
     // ETAPE2: ENVOYER LA REQUETE
     $pdoStatement = envoyerRequeteSQL($requeteSQLPreparee, $tabAssoColonneValeur);
+}
+
+function supprimerLigne($nomTable, $id)
+{
+    // IL FAUT PROTEGER $id POUR ASSURER QUE C'EST UN NOMBRE
+    // https://www.php.net/manual/fr/function.intval.php
+    // filtre pour convertir $id en nombre entier
+    $id = intval($id);
+    // CREER UNE REQUETE SQL PREPAREE
+    $requeteSQLPreparee =
+<<<CODESQL
+DELETE FROM $nomTable
+WHERE id = $id
+CODESQL;
+    // pas de jeton :id donc rien dans le tableau
+    $tabAssoColonneValeur = [];
+    // ENVOYER LA REQUETE SQL PREPAREE
+    $pdoStatement = envoyerRequeteSQL($requeteSQLPreparee, $tabAssoColonneValeur);
+    // renvoyer $pdoStatement
+    return $pdoStatement;
+}
+
+
+function modifierLigne($nomTable, $id, $tabAssoColonneValeur)
+{
+    $id = intval($id);
+    $listeColonneToken = "";
+    // A VOUS LES STUDIOS... 
+    // LA LISTE DES COLONNES EST DANS LES CLES DU TABLEAU ASSOCIATIF $tabAssoColonneValeur
+    $indice = 0;
+    foreach($tabAssoColonneValeur as $colonne => $nouvelleValeur)
+    {
+        // est-ce qu'on est au début ?
+        if ($indice > 0)
+        {
+            // pour les élements suivants, je rajoute une virgule
+            $listeColonneToken = $listeColonneToken . ",$colonne = :$colonne";
+        }
+        else
+        {
+            // au début, je ne mets pas de virgule
+            $listeColonneToken = $listeColonneToken . "$colonne = :$colonne";
+        }
+        
+        $indice++;
+    }
+    // REQUETE SQL PREPAREE
+    $requeteSQLPreparee =
+<<<CODESQL
+UPDATE $nomTable
+SET
+$listeColonneToken
+WHERE id = $id
+CODESQL;
+    // ENVOYER LA REQUETE SQL PREPAREE
+    $pdoStatement = envoyerRequeteSQL($requeteSQLPreparee, $tabAssoColonneValeur);
+    // renvoyer $pdoStatement
+    return $pdoStatement;
 }

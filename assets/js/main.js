@@ -1,3 +1,4 @@
+//LIGHTBOX
 var listePhotos = document.querySelectorAll(".container img");
 
 listePhotos.forEach((photo) => {
@@ -17,27 +18,34 @@ if (lightBox != null) {
 }
 else { };
 
-//APPARITION LETTRES
-var chaine = " le Royaume-Uni";
-var nb_car = chaine.length;
-var tableau = chaine.split("");
-texte = new Array;
-var txt = '';
-var nb_msg = nb_car - 1;
-for (i = 0; i < nb_car; i++) {
-    texte[i] = txt + tableau[i];
-    var txt = texte[i];
-}
+//TYPE EFFECT
+var typeString = [" l'Angleterre", " l'Ecosse", " le Pays de Galles", " L'Irlande du Nord"];
+var i = 0;
+var count = 0
+var selectedText = '';
+var text = '';
+(function type() {
+    if (count == typeString.length) {
+        count = 0;
+    }
+    selectedText = typeString[count];
+    text = selectedText.slice(0, ++i);
+    document.querySelector("#titreApp").innerHTML = text;
+    if (text.length === selectedText.length) {
+        count++;
+        i = 0;
+    }
+    setTimeout(type, 100);
+}());
 
-actual_texte = 0;
-function changeMessage() {
-    document.querySelector('#titreApp').innerHTML = texte[actual_texte];
-    actual_texte++;
-    if (actual_texte >= texte.length)
-        actual_texte = nb_msg;
+function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+        if ((new Date().getTime() - start) > milliseconds) {
+            break;
+        }
+    }
 }
-if (document.querySelector)
-    setInterval("changeMessage()", 100)
 
 //AJAX
 var listeFormAjax = document.querySelectorAll("form.ajax");

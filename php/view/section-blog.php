@@ -2,9 +2,7 @@
     <h3>Les Derniers Articles</h3>
     <div class="listeArticle">
         <?php
-// ON VEUT RECUPERER LA LISTE DES ARTICLE DE LA TABLE SQL blog
-// ET ON LES AFFICHERA DANS DES BALISES HTML article
-// (READ)
+
     require "php/mes-fonctions.php";
 
     // LA FONCTION QUE JE VEUX AVOIR
@@ -25,11 +23,6 @@
         </article>
 CODEHTML;
     }
-    // DEBUG
-    // print_r UN PEU COMME console.log
-    // echo "<pre>";
-    // print_r($tabLigne);
-    // echo "</pre>";
 ?>
     </div>
 </section>
