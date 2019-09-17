@@ -1,6 +1,6 @@
 <?php
 // CHARGER MES FONCTIONS POUR POUVOIR LES UTILISER
-require "php/mes-fonctions.php";
+require_once "php/mes-fonctions.php";
 // CE FICHIER VA CENTRALISER TOUS LES FORMULAIRES DU FRONT
 $idFormulaire = $_REQUEST["idFormulaire"] ?? "";
 // SI IL Y UNE VALEUR DANS $idFormulaire

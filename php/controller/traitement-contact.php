@@ -4,7 +4,7 @@
         $message = $_REQUEST["message"] ?? "";
         // UNE FOIS QU'ON A CETTE FONCTION A NOTRE DISPOSITION
         // POUR L'UTILISER, ON VA APPELER LA FONCTION
-        require "php/mes-fonctions.php";
+        require_once "php/mes-fonctions.php";
 
         insererLigneTable("contact", [
                 "nom" => $nom,

@@ -3,7 +3,7 @@
         $email = $_REQUEST["email"] ?? "";
         // UNE FOIS QU'ON A CETTE FONCTION A NOTRE DISPOSITION
         // POUR L'UTILISER, ON VA APPELER LA FONCTION
-        require "php/mes-fonctions.php";
+        require_once "php/mes-fonctions.php";
 
         insererLigneTable("newsletter", [
                 "nom" => $nom,
@@ -19,4 +19,5 @@ Email: $email
 CODETEXT;
 
 @mail("webmaster@monsite.fr", "nouvel abonnement newsletter", $ligne);
+
 $confirmation = "Merci $nom, votre abonnement a bien été pris en compte";

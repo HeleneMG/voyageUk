@@ -4,7 +4,7 @@
             <section>
                 <h3>Nouvel article</h3>
                 <!-- formulaire de création d'article de blog -->
-                <form action="api-json.php" method="POST">
+                <form action="api-json.php" method="POST" class="ajax">
                     <label>
                         <p>titre</p>
                         <input type="text" name="titre" required placeholder="entrez le titre">
@@ -26,7 +26,7 @@
             <section>
                 <h3>Modifier un article</h3>
                 <!-- formulaire de création d'article de blog -->
-                <form action="api-json.php" method="POST">
+                <form action="api-json.php" method="POST" class="ajax">
                     <label>
                         <p>id</p>
                         <input type="text" name="id" required placeholder="entrez id">
@@ -52,7 +52,7 @@
             <!-- formulaire de suppression d'article de blog -->
             <section>
                 <h3>Supprimer un article</h3>
-                <form action="api-json.php" method="POST">
+                <form action="api-json.php" method="POST"class="ajax">
                     <input type="text" name="nomTable" required placeholder="entrez le nom de la table">
                     <input type="number" name="id" required placeholder="entrez id de la ligne">
                     <button type="submit">supprimer la ligne</button>
@@ -60,6 +60,7 @@
                     <input type="hidden" name="idFormulaire" value="blog-delete">
                 </form>
             </section>
+            
             <section>
                 <h3>Articles Précédents</h3>
                 <div class="listeBlog"></div>

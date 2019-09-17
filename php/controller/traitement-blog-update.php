@@ -7,7 +7,7 @@ $photo              = $_REQUEST["photo"] ?? "";
 $datePublication    = $_REQUEST["datePublication"] ?? "";
 $categorie          = $_REQUEST["categorie"] ?? "";
 
-require "php/mes-fonctions.php";
+require_once "php/mes-fonctions.php";
 
 modifierLigne("blog", $id, [
     "titre"             => $titre,
@@ -17,4 +17,4 @@ modifierLigne("blog", $id, [
     "categorie"         => $categorie,
 ]);
 
-$confirmation = "article modifiÃ© ($id: $titre)";
+$confirmation = "article modifié ($id: $titre)";

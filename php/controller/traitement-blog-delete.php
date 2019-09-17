@@ -3,7 +3,7 @@
 $id              = $_REQUEST["id"] ?? "";
 $nomTable        = $_REQUEST["nomTable"] ?? "";
 
-require "php/mes-fonctions.php";
+require_once "php/mes-fonctions.php";
 
 supprimerLigne($nomTable, $id);
 

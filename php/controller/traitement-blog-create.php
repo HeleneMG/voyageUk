@@ -6,7 +6,7 @@ $photo              = $_REQUEST["photo"] ?? "";
 $datePublication    = $_REQUEST["datePublication"] ?? "";
 $categorie          = $_REQUEST["categorie"] ?? "";
 
-require "php/mes-fonctions.php";
+require_once "php/mes-fonctions.php";
 
 insererLigneTable("blog", [
     "titre"             => $titre,
@@ -17,3 +17,7 @@ insererLigneTable("blog", [
 ]);
 
 $confirmation = "article publié ($titre)";
+// en plus, on va fournir la liste des articles publiés
+$tabBlog = lireTable("blog");
+// je rajoute le tableau dans la réponse à envoyer au navigateur
+$tabAssoJson["tabBlog"] = $tabBlog; 
