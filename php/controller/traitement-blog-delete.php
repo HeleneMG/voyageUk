@@ -7,4 +7,8 @@ require_once "php/mes-fonctions.php";
 
 supprimerLigne($nomTable, $id);
 
-$confirmation = "article supprimÃ© ($id)";
+$confirmation = "article supprimé ($id)";
+
+$tabBlog = lireTable("blog");
+
+$tabAssoJson["tabBlog"] = $tabBlog; 

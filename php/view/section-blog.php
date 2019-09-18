@@ -1,28 +1,27 @@
-<section class="articles">
-    <h3>Les Derniers Articles</h3>
-    <div class="listeArticle">
-        <?php
+        <section>
+            <h3>Blog</h3>
+            <div class="listeBlog">
+                <?php
 
-    require "php/mes-fonctions.php";
+require_once "php/mes-fonctions.php";
+$tabArticle = lireTable("blog");
 
-    // LA FONCTION QUE JE VEUX AVOIR
-    $tabLigne = lireTableBlog();
-    // JE PARCOURS TOUS LES ELEMENTS DU TABLEAU
-    foreach($tabLigne as $ligneAsso)
-    {
-        $titre      = $ligneAsso["titre"];
-        $contenu    = $ligneAsso["contenu"];
-        $photo      = $ligneAsso["photo"];
-        // JE PEUX CONSTRUIRE LE CODE HTML POUR L'ARTICLE
-        echo
+foreach($tabArticle as $ligneAsso)
+{
+    $titre = $ligneAsso["titre"];
+    $contenu = $ligneAsso["contenu"];
+    $photo = $ligneAsso["photo"];
+    // ... à compléter
+    // construire le code HTML
+    echo
 <<<CODEHTML
-        <article>
-            <h3>$titre</h3>
-            <img src="$photo" alt="$photo">
-            <p>$contenu</p>
-        </article>
+    <article>
+        <h3>$titre</h3>
+        <img src="$photo" alt="$photo">
+        <p>$contenu</p>
+    </article>
 CODEHTML;
-    }
+}
 ?>
-    </div>
-</section>
+            </div>
+        </section>

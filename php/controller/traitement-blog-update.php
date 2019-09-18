@@ -18,3 +18,7 @@ modifierLigne("blog", $id, [
 ]);
 
 $confirmation = "article modifié ($id: $titre)";
+
+$tabBlog = lireTable("blog");
+
+$tabAssoJson["tabBlog"] = $tabBlog; 
